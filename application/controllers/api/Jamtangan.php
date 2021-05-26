@@ -88,4 +88,31 @@ class Jamtangan extends REST_Controller
             ], REST_Controller::HTTP_BAD_REQUEST);
         }
     }
+
+    public function index_put()
+    {
+        $item_id = $this->put('item_id');
+        $data = [
+            'item_brand' => $this->put('item_brand'),
+            'item_name' => $this->put('item_name'),
+            'item_price' => $this->put('item_price'),
+            'item_type' => $this->put('item_type'),
+            'item_image' => $this->put('item_image')
+        ];
+
+        if($this->jamtangan->updateJamtangan($data , $item_id) > 0){
+            $message = [
+                'status' => TRUE,
+                'item_id' => $item_id,
+                'message' => 'item updated'
+            ];
+    
+            $this->set_response($message, REST_Controller::HTTP_NO_CONTENT);
+        } else {
+            $this->response([
+                'status' => FALSE,
+                'message' => 'failed to update an item'
+            ], REST_Controller::HTTP_BAD_REQUEST);
+        }
+    }
 }
