@@ -15,7 +15,6 @@ class Migration_create_table_api_keys extends CI_Migration {
 
 	public function up()
 	{
-		$this->config->load('rest');
 		$table = config_item('rest_keys_table');
 		$fields = array(
 			'id'                           => [

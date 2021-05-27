@@ -546,7 +546,7 @@ $config['rest_language'] = 'english';
 | will access it through a browser
 |
 */
-$config['check_cors'] = FALSE;
+$config['check_cors'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -557,6 +557,7 @@ $config['check_cors'] = FALSE;
 |
 */
 $config['allowed_cors_headers'] = [
+  'Authorization',
   'Origin',
   'X-Requested-With',
   'Content-Type',
@@ -590,7 +591,7 @@ $config['allowed_cors_methods'] = [
 | source domain
 |
 */
-$config['allow_any_cors_domain'] = FALSE;
+$config['allow_any_cors_domain'] = TRUE;
 
 /*
 |--------------------------------------------------------------------------
@@ -604,24 +605,3 @@ $config['allow_any_cors_domain'] = FALSE;
 |
 */
 $config['allowed_cors_origins'] = [];
-
-/*
-|--------------------------------------------------------------------------
-| CORS Forced Headers
-|--------------------------------------------------------------------------
-|
-| If using CORS checks, always include the headers and values specified here 
-| in the OPTIONS client preflight.
-| Example:
-| $config['forced_cors_headers'] = [
-|   'Access-Control-Allow-Credentials' => 'true'
-| ];
-|
-| Added because of how Sencha Ext JS framework requires the header
-| Access-Control-Allow-Credentials to be set to true to allow the use of
-| credentials in the REST Proxy. 
-| See documentation here:
-| http://docs.sencha.com/extjs/6.5.2/classic/Ext.data.proxy.Rest.html#cfg-withCredentials
-|
-*/
-$config['forced_cors_headers'] = [];

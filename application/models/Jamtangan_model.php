@@ -22,7 +22,7 @@ class Jamtangan_model extends CI_Model
         $this->db->insert('product', $data);
         return $this->db->affected_rows();
     }
-    
+
     public function updateJamtangan($data, $id)
     {
         $this->db->update('product', $data, ['item_id' => $id]);
