@@ -75,7 +75,7 @@ class JWT
         }
         $tks = explode('.', $jwt);
         if (count($tks) != 3) {
-            throw new UnexpectedValueException('Wrong number of segments');
+            throw new UnexpectedValueException('Masukkan Token!');
         }
         list($headb64, $bodyb64, $cryptob64) = $tks;
         if (null === ($header = static::jsonDecode(static::urlsafeB64Decode($headb64)))) {
