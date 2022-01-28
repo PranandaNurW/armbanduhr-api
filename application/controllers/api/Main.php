@@ -57,7 +57,8 @@ class Main extends BD_Controller {
                 'item_brand' => $this->post('item_brand'),
                 'item_name' => $this->post('item_name'),
                 'item_price' => $this->post('item_price'),
-                'item_type' => $this->post('item_type')
+                'item_type' => $this->post('item_type'),
+                'item_image' => $this->post('item_image')
             ];
 
             if($this->jamtangan->createJamtangan($data) > 0){
@@ -87,7 +88,8 @@ class Main extends BD_Controller {
                 'item_brand' => $this->put('item_brand'),
                 'item_name' => $this->put('item_name'),
                 'item_price' => $this->put('item_price'),
-                'item_type' => $this->put('item_type')
+                'item_type' => $this->put('item_type'),
+                'item_image' => $this->post('item_image')
             ];
 
             if($this->jamtangan->updateJamtangan($data , $item_id) > 0){
